@@ -1,5 +1,15 @@
 # getting-started Project
 
+```
+docker run --rm --cap-add=IPC_LOCK -e VAULT_ADDR=http://localhost:8200 -p 8200:8200 -d --name=dev-vault vault:latest
+docker logs dev-vault
+docker exec -it dev-vault sh
+export VAULT_ADDR=http://localhost:8200
+export VAULT_TOKEN=hvs.eYQZPqb5qzbfRme4DYSae3dd
+vault kv put secret/myapps/vault-quickstart/config a-private-key=123456
+
+```
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
